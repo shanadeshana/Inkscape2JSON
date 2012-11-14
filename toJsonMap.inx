@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Export as JSON</_name>
+    <id>org.ekips.filter.sajson</id>
+    <dependency type="executable" location="extensions">toJsonMap.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    
+    <param name="key" type="boolean" _gui-text="use object id as key"></param>
+    
+    <effect needs-live-preview="false">
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="Exports"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">toJsonMap.py</command>
+    </script>
+</inkscape-extension>
