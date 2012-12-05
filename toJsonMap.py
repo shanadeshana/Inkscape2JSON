@@ -91,17 +91,15 @@ class SplitIt(inkex.Effect):
 		if len(self.selected.keys()) > 0:
 			nodes = self.selected.values()
 		else:
-			path = "/svg:svg/svg:g/*[@id]"
-			nodes = self.document.xpath(path, namespaces=inkex.NSS)
-		
+			path = "./svg:g/*[@id]"
+			nodes = self.document.iterfind(path, namespaces=inkex.NSS)
+
 		if self.options.key == 'true':
 			elems = {};
-			path = "/svg:svg/svg:g/*[@id]"
 			for node in nodes:
 				elems[node.get('id')] = self.getCC(node)
 		else:
 			elems = [];
-			path = "/svg:svg/svg:g/*[@id]"
 			for node in nodes:
 				elems.append(self.getCC(node))
 		
