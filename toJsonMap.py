@@ -102,7 +102,7 @@ class SplitIt(inkex.Effect):
 			cc = self.getCCFromGroup(node)
 		elif node.tag == inkex.addNS('path', 'svg'):
 			cc = self.getCCFromPath(node)
-		else:
+		elif 'x' in node.attrib and 'y' in node.attrib:
 			cc['x'] = asInt(node.get('x'))
 			cc['y'] = asInt(node.get('y'))
 
