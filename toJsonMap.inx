@@ -6,6 +6,7 @@
     <dependency type="executable" location="extensions">inkex.py</dependency>
     
     <param name="key" type="boolean" _gui-text="use object id as key"></param>
+    <param name="size" type="boolean" _gui-text="set size of object"></param>
     
     <effect needs-live-preview="false">
         <object-type>all</object-type>
